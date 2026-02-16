@@ -14,7 +14,7 @@ jobs:
             - name: Pulumi Auth
               uses: pulumi/auth-actions@v1
               with:
-                organization: pequod
+                organization: piers-eu
                 requested-token-type: urn:pulumi:token-type:access_token:team
                 scope: team:env-admin-pk
                 cloud-url: https://api.eu.pulumi.com
