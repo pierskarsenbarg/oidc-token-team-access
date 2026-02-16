@@ -17,6 +17,7 @@ jobs:
                 organization: pequod
                 requested-token-type: urn:pulumi:token-type:access_token:team
                 scope: team:env-admin-pk
+                cloud-url: https://app.eu.pulumi.com
             - name: Install Pulumi
               uses: pulumi/actions@v6
               with: 
