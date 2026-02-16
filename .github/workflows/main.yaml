@@ -1,0 +1,31 @@
+name: Install component from github
+
+on:
+    workflow_dispatch
+
+permissions:
+  id-token: write
+
+jobs:
+    do-install:
+        runs-on: ubuntu-latest
+        name: Do the install
+        steps:
+            - name: Pulumi Auth
+              uses: pulumi/auth-actions@v1
+              with:
+                organization: pequod
+                requested-token-type: urn:pulumi:token-type:access_token:team
+                scope: team:env-admin-pk
+            - name: Checkout Repo
+              uses: actions/checkout@v6
+            - name: Install Pulumi
+              uses: pulumi/actions@v6
+              with: 
+                pulumi-version: "v3.218.0"
+            - name: Run pulumi about
+              run: pulumi about
+            - name: Run pulumi whoai
+              run: pulumi whoami -v
+            - name: Pulumi ESC ls
+              run: pulumi env ls
