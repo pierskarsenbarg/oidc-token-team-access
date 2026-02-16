@@ -7,9 +7,9 @@ permissions:
   id-token: write
 
 jobs:
-    do-install:
+    do-test-token:
         runs-on: ubuntu-latest
-        name: Do the install
+        name: Test team token from oidc
         steps:
             - name: Pulumi Auth
               uses: pulumi/auth-actions@v1
