@@ -1,4 +1,4 @@
-name: Install component from github
+name: Test oidc token
 
 on:
     workflow_dispatch
@@ -17,8 +17,6 @@ jobs:
                 organization: pequod
                 requested-token-type: urn:pulumi:token-type:access_token:team
                 scope: team:env-admin-pk
-            - name: Checkout Repo
-              uses: actions/checkout@v6
             - name: Install Pulumi
               uses: pulumi/actions@v6
               with: 
